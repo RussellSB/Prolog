@@ -1,0 +1,25 @@
+/*
+Question 1.
+Russell Sammut Bonnici
+ICS1015
+*/
+
+/*fact*/
+secret_word([h,e,l,l,o]).
+
+/*initiating predicate*/
+start :- 	C is 1,
+		repeat,
+		write('Guess the first letter'),read(H),
+		( secret_word([H|T])->write('OK. '),letter(T,C); 
+		fail ).
+
+/*base case*/
+letter([],5):- write('Congratulations! The word is '),secret_word(Y),write(Y),nl,!.
+
+/*recursive predicate*/
+letter(X,C):-	C1 is C+1,
+			repeat,
+			write('Letter #'),write(C1),read(H),
+			((X=[H|T])->write('OK. '),letter(T,C1); 
+			write('Fail. try again! '),fail ).

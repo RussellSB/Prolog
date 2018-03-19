@@ -1,0 +1,40 @@
+/*
+Question 3.
+Russell Sammut Bonnici
+ICS1015
+*/
+
+/* Question 3a. */
+
+%base cases
+permute([],[]).
+permute([X],[X]):-!.
+%recursive predicate that returns a list's permutations
+permute([H|T],Permutation) :- permute(T,X), 
+					append(L,P2,X), 
+					append(L,[H],P1),
+					append(P1,P2,Permutation).
+
+/* refer to report for 3b */
+
+/* Question 3c. */
+
+%predicate that returns all the anagagrams in a list
+anagram(L,AnagramList) :- findall(Anagram,permute(L,Anagram),AnagramList).
+
+/* Question 3d. */
+
+%base cases
+sorted([]).
+sorted([_]). 
+%predicate that succeeds when numbers are in order
+sorted([H1,H2|T])  :-	H1 =< H2,
+				sorted([H2|T]).
+			
+
+/* Question 3e. */
+
+nSort(L,Permutation) :-	permute(L,Permutation),
+				sorted(Permutation),
+				!.
+
