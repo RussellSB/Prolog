@@ -1,2 +1,2 @@
 # Prolog Assignment
-University assignmanet using Prolog. Practiced recursion.
+University assignmet using Prolog. Practiced recursion.
