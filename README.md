@@ -1,2 +1,2 @@
-# Prolog Assignment
-University assignmet using Prolog. Practiced recursion.
+# Prolog Programming
+Recursive problems in logical programming
